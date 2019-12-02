@@ -1,0 +1,230 @@
+body {
+	margin: 0;
+	font-family: 'Rubik', sans-serif;
+	color: #FFFFFF;
+	font-size: 24px;
+	font-weight: normal;
+	font-style: normal;
+
+}
+*,
+:before,
+:after {
+	box-sizing: border-box;
+}
+/*Header*/
+.header {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+.header__inner {
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 58px 0px 67px;	
+	
+}	
+.header__logo {
+	margin-top: 17px;
+	margin-right: 47px;
+}
+.header__controls {
+	display: flex;
+}		
+.menu {
+	margin-left: 20px;
+	height: 46px;
+	width: 46px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.search {
+	height: 46px;
+	width: 46px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.menu:hover,
+.search:hover {
+	background-color: #F44242;
+	transition: background .2s linear;
+
+}
+/*Nav*/
+.nav {
+	display: flex;
+ 	font-size: 16px;
+ 	padding-top: 17px;
+ 	padding-bottom: 40px;
+}
+.nav__link {
+	margin-left: 40px;
+	color: #fff;
+	text-decoration: none;
+	padding: 0;
+}
+.nav__link:first-child {
+	margin-left: 0;
+}
+
+
+/*Intro*/
+.intro {
+	height: 100vh;
+background: -webkit-linear-gradient(bottom, rgba(52, 54, 59, 0.6), rgba(52, 54, 59, 0.6)), url(assets/luca-bravo-SRjZtxsK3Os-unsplash.jpg)  center no-repeat;
+background: -o-linear-gradient(bottom, rgba(52, 54, 59, 0.6), rgba(52, 54, 59, 0.6)), url(assets/luca-bravo-SRjZtxsK3Os-unsplash.jpg)  center no-repeat;
+background: linear-gradient(to top, rgba(52, 54, 59, 0.6), rgba(52, 54, 59, 0.6)), url(assets/luca-bravo-SRjZtxsK3Os-unsplash.jpg)  center no-repeat;
+	background-size: cover;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+.intro__item {
+	width: 33.333%;
+	border: 1px solid rgba(255, 255, 255, .1);
+	height: 25vh;
+	display: flex;
+	align-items: center;
+	padding-left: 68px;
+	padding-right: 15px;
+}
+.intro__item:hover {
+	align-items: center;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+.intro__title {
+	text-transform: uppercase;
+	font-size: 24px;
+}
+.intro__links {
+	text-transform: uppercase;
+	margin-top: 10px;
+	font-size: 16px;
+	display: none;
+}
+.intro__link {
+	margin-bottom: 10px;
+}
+.item__image {
+	display: none;
+}
+.intro__item:hover .intro__links{
+	display: block;
+
+}
+.intro__item:hover .item__image{
+	display: block;
+}
+.intro__item:hover .intro__title {
+	margin-bottom: 20px;
+}
+.intro__item--odd:hover {
+	background-color: #4285F4;
+	transition: background .3s linear;
+}
+.intro__item--even:hover {
+	background-color: #F44242;
+	transition: background .3s linear;
+}
+@media (max-width: 1024px) {
+	.header__inner {
+		padding: 30px 28px 0;
+	}
+	.header__logo {
+		margin-top: 0;
+		margin-right: 57px;
+	}
+	.nav__link {
+		font-size: 12px;
+		margin-left: 10px;
+	}
+	.intro__item {
+		padding-left: 28px;
+	}
+	.intro__title {
+		font-size: 18px;
+	}
+	.intro__links {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 768px) {
+	.nav {
+		display: none;
+	}
+	.header__inner {
+		flex-wrap: wrap-reverse;
+		justify-content: space-around;
+		padding: 27px 20px 0;
+	}
+	.header__controls {
+		width: 100%;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+	.header__logo {
+		width: 100%;
+		margin: 5vh 0 5vh;
+		text-align: center;
+
+	}
+	.menu {
+		margin: 0;
+	}
+	.intro {
+		height: 33vh;
+	}
+	.intro__item {
+		padding: 36px 0 40px;
+		height: 33vh;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+	.intro__item:hover {
+		flex-direction: column;
+	}
+	.intro__item--even {
+		background-color: #F44242;
+	}
+	.intro__item--odd {
+		background-color: #4285F4;
+	}
+	.intro__content {
+		text-align: center;
+	}
+	.intro__title {
+		margin-bottom: 20px;
+	}
+	.item__image {
+		display: block;
+	}
+	.intro__links {
+		opacity: 1;
+		font-size: 14px;
+		display: flex;
+		justify-content: center;
+	}
+	.intro__item:hover .intro__links {
+		display: flex;
+	}
+	.intro__link {
+		margin: 10px 25px 0;
+	}
+	.intro__item--fake {
+		display: none;
+	}
+	.intro__item:first-child {
+		display: block;
+	}
+
+
+}
