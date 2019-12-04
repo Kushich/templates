@@ -22,22 +22,51 @@
 				<a href="" class="nav__link">Контакты</a>
 			</nav>
 			<div class="header__controls">
-				<div class="search">
-					<img src="assets/search.png" alt="">
+				<div id="search" class="search">
+					<img src="assets/search.png" alt="" class="search--open">
+					<div class="search__body">
+ 			   			<img src="assets/close.png" alt="" class="search--close">
+ 			   			<div class="search__panel">
+ 			   			<input class="search__input" type="text"/>
+    					</div>
+    					<div class="find">		
+    						<div class="find__inner">
+								<img src="assets/search.png" alt="" class="find__icon">
+								<p class="find__text">Найти</p>
+							</div>
+    					</div>
+ 			   		</div>
 				</div>
-				<div class="menu">
-					<img src="assets/menu.png" alt="">
-				</div>
+			   <div id="dropdown" class="dropdown">
+ 			   		<img src="assets/menu.png" alt="" class="dropdown--open">
+ 			   		<div class="dropdown__body">
+ 			   			<img src="assets/close.png" alt="" class="dropdown--close">
+ 			   			<div class="dropdown__nav">
+ 			   			<a class="dropdown__link" href="">Главная</a>
+    					<a class="dropdown__link" href="">Каталог</a>
+    					<a class="dropdown__link" href="">Проекты</a>
+    					<a class="dropdown__link" href="">О компании</a>
+    					<a class="dropdown__link" href="">Контакты</a>
+    					</div>
+ 			   		</div>
+
+  				</div>
 			</div>
-			<!-- <button class="menu" type="button">
-				<span class="burger__item">Menu</span>
-			</button> -->
+
 		</div>
 	</header>
 	<!-- /Header -->
 
+	<!-- Slider -->
+	<ul id="slides">
+   		<li class="slide showing"></li>
+    	<li class="slide"></li>
+	</ul>
+	<!-- /Slider -->
+	
 	<!-- Intro -->
 	<div class="intro">
+		
 		<!-- 1 -->
 		<div class="intro__item intro__item--fake">
 		</div>
@@ -121,9 +150,54 @@
 		<div class="intro__item intro__item--fake">
 		</div>
 		<div class="scroll">
-			<a href="" class="btn btn-up"></a>
+			<div class="scroll__inner">
+				<img src="assets/up.png" alt="" class="scroll_icon">
+				<p class="scroll__text">Наверх</p>
+			</div>
 		</div>
+		<!-- Footer -->
+		<footer class="footer">
+			<p class="copyright">Каталог ©</p>
+			<p class="footer__text">Разработка сайта</p>
+		</footer>
+		<!-- /Footer -->
 	</div>
 	<!-- /Intro -->
+
+
+    <script>
+     	let dropdown = document.getElementById('dropdown');
+      	let dropdownOpen = dropdown.querySelector('.dropdown--open');
+      	let dropdownClose = dropdown.querySelector('.dropdown--close');
+  
+      	dropdownOpen.onclick = function() {
+        	dropdown.classList.add('open');
+      	};
+      	dropdownClose.onclick = function() {
+        	dropdown.classList.remove('open');
+      	};
+
+      	let search = document.getElementById('search');
+      	let searchOpen = search.querySelector('.search--open');
+      	let searchClose = search.querySelector('.search--close');
+
+      	searchOpen.onclick = function() {
+        	search.classList.add('open');
+      	};
+      	searchClose.onclick = function() {
+        	search.classList.remove('open');
+      	};
+
+		//slider 
+		let slides = document.querySelectorAll('#slides .slide');
+		let currentSlide = 0;
+		let slideInterval = setInterval(nextSlide,10000);
+ 
+		function nextSlide() {
+    		slides[currentSlide].className = 'slide';
+    		currentSlide = (currentSlide + 1) % slides.length;
+    		slides[currentSlide].className = 'slide showing';
+		}
+    </script>
 </body>
 </html>
